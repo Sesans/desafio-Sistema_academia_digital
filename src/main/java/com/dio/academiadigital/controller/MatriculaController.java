@@ -3,6 +3,7 @@ package com.dio.academiadigital.controller;
 import com.dio.academiadigital.entity.Matricula;
 import com.dio.academiadigital.entity.form.MatriculaForm;
 import com.dio.academiadigital.service.impl.MatriculaServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class MatriculaController {
     private MatriculaServiceImpl service;
 
     @PostMapping
-    public Matricula create(@RequestBody MatriculaForm form){
+    public Matricula create(@Valid @RequestBody MatriculaForm form){
         return service.create(form);
     }
 
