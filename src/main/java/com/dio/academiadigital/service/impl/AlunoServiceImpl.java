@@ -8,10 +8,13 @@ import com.dio.academiadigital.repository.AlunoRepository;
 import com.dio.academiadigital.service.IAlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Validated
 public class AlunoServiceImpl implements IAlunoService {
 
     @Autowired
@@ -30,9 +33,7 @@ public class AlunoServiceImpl implements IAlunoService {
     }
 
     @Override
-    public Optional<Aluno> get(Long id) {
-        return repository.findById(id);
-    }
+    public Optional<Aluno> get(Long id){ return repository.findById(id);}
 
     @Override
     public List<Aluno> getAll() {
@@ -46,7 +47,7 @@ public class AlunoServiceImpl implements IAlunoService {
 
     @Override
     public void delete(Long id) {
-
+        repository.deleteById(id);
     }
 
     @Override
