@@ -7,9 +7,11 @@ import com.dio.academiadigital.entity.form.AlunoUpdateForm;
 import com.dio.academiadigital.repository.AlunoRepository;
 import com.dio.academiadigital.service.IAlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,20 +43,17 @@ public class AlunoServiceImpl implements IAlunoService {
     }
 
     @Override
-    public Aluno update(Long id, AlunoUpdateForm formUpdate) {
-        return null;
+    public Optional<Aluno> update(Long id, AlunoUpdateForm formUpdate) {
+        Aluno aluno = repository.findById(id).get();
+        aluno.setBairro(formUpdate.getBairro());
+        aluno.setDataDeNascimento(formUpdate.getDataDeNascimento());
+        aluno.setNome(formUpdate.getNome());
+
+        return Optional.of(repository.save(aluno));
     }
 
     @Override
     public void delete(Long id) {
         repository.deleteById(id);
     }
-
-    @Override
-    public List<AvaliacaoFisica> getAllAvalicaoFisicaid(Long id) {
-        Aluno aluno = repository.findById(id).get();
-        return aluno.getAvaliacoes();
-    }
-
-
 }

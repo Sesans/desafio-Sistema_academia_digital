@@ -14,9 +14,7 @@ public interface IAlunoService {
 
     List<Aluno> getAll();
 
-    Aluno update(Long id, AlunoUpdateForm formUpdate);
+    Optional<Aluno> update(Long id, AlunoUpdateForm formUpdate);
 
     void delete(Long id);
-
-    List<AvaliacaoFisica> getAllAvalicaoFisicaid(Long id);
 }

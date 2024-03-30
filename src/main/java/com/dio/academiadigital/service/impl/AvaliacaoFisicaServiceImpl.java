@@ -9,7 +9,6 @@ import com.dio.academiadigital.repository.AvaliacaoFisicaRepository;
 import com.dio.academiadigital.service.IAvaliacaoFisicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -20,6 +19,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
     @Autowired
     private AlunoRepository alunoRepository;
+
     @Override
     public AvaliacaoFisica create(AvaliacaoFisicaForm form) {
         AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
@@ -34,22 +34,26 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
     }
 
     @Override
-    public AvaliacaoFisica get(Long id) {
-        return null;
+    public List<AvaliacaoFisica> get(Long id){
+        Aluno aluno = alunoRepository.findById(id).get();
+        return aluno.getAvaliacoes();
     }
 
     @Override
     public List<AvaliacaoFisica> getAll() {
-        return null;
+        return avaliacaoFisicaRepository.findAll();
     }
 
     @Override
     public AvaliacaoFisica update(Long id, AvaliacaoFisicaUpdateForm formUpdate) {
-        return null;
+        AvaliacaoFisica avaliacaoFisica = avaliacaoFisicaRepository.findById(id).get();
+        avaliacaoFisica.setAltura(formUpdate.getAltura());
+        avaliacaoFisica.setPeso(formUpdate.getPeso());
+        return avaliacaoFisicaRepository.save(avaliacaoFisica);
     }
 
     @Override
     public void delete(Long id) {
-
+        avaliacaoFisicaRepository.deleteById(id);
     }
 }
