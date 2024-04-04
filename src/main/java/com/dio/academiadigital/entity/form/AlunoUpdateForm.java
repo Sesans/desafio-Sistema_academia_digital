@@ -22,7 +22,7 @@ public class AlunoUpdateForm {
     @Size(min = 3, max = 50, message = "'${validatedValue}' precisa estar entre {min} e {max} caracteres.")
     private String bairro;
 
-    @NotNull(message = "Preencha o campo corretamente.")
+    //@NotNull(message = "Preencha o campo corretamente.")
     @Past(message = "Data '${validatedValue}' é invalida!")
     private LocalDate dataDeNascimento;
 }

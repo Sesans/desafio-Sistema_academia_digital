@@ -11,6 +11,6 @@ import java.time.LocalDate;
 public class AlunoForm extends AlunoUpdateForm{
 
     @NotEmpty(message = "O campo deve ser preenchido!")
-    @CPF(message = "'${validatedValue}' é invalido!")
+    //@CPF(message = "'${validatedValue}' é invalido!")
     private String cpf;
 }

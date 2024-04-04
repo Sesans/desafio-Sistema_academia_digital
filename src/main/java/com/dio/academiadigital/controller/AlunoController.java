@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/alunos")
+@CrossOrigin("*")
 public class AlunoController {
     @Autowired
     private AlunoServiceImpl service;

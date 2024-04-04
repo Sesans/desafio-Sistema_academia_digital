@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+}
+.aboutmain{
+    color: white;
+    border-radius: 60px;
+    background-color: rgba(54, 20, 20, 0.8);
+    margin-left: 900px;
+    margin-right: 100px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.about{
+    text-align: justify;
+}
+.title{
+    text-align: center;
+}
+.pag{
+    height: 600px;
+    padding-top: 60px;
+    padding-left: 200px;
+    padding-bottom: 100px;
+    background-image: url("backimgpag.png");
+}
+nav{
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    background-color: rgb(3, 0, 28);
+}
+
+.logo{
+    font-size: 20px;
+    color: rgb(0, 129, 112);
+}
+
+.links{
+    text-align: end;
+}
+
+.cadastro{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 110px;    
+    height: 23px;
+    background-color: black;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255)
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+.busca{
+    margin-left: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 110px;    
+    height: 23px;
+    background-color: black;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255)
+}
+
+footer{
+    height: 71px;
+}
